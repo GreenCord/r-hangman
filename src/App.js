@@ -4,6 +4,7 @@ import "./App.css";
 
 import EventArea from "./components/EventArea/EventArea";
 import FamilyArea from "./components/FamilyArea/FamilyArea";
+import ActionTextArea from "./components/ActionTextArea/ActionTextArea";
 
 function App() {
   return (
@@ -14,19 +15,17 @@ function App() {
         </header>
         <EventArea />
         <FamilyArea />
-        <section className="actionText">
-          <p>This is a temporary bit of text. Just to get the layout done.</p>
-        </section>
+        <ActionTextArea />
         <section className="wordArea">
-          <div className="word-letter">D</div>
-          <div className="word-letter">Y</div>
-          <div className="word-letter">S</div>
-          <div className="word-letter">E</div>
-          <div className="word-letter">N</div>
-          <div className="word-letter">T</div>
-          <div className="word-letter">E</div>
-          <div className="word-letter">R</div>
-          <div className="word-letter">Y</div>
+          <div className="letter">D</div>
+          <div className="letter">Y</div>
+          <div className="letter">S</div>
+          <div className="letter">E</div>
+          <div className="letter">N</div>
+          <div className="letter">T</div>
+          <div className="letter">E</div>
+          <div className="letter">R</div>
+          <div className="letter">Y</div>
         </section>
         <section className="lettersGuessed">
           <div className="letter">Q</div>

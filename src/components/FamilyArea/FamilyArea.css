@@ -1,7 +1,7 @@
 .family {
   background: #0e0e0e;
   display: grid;
-  font-size: 0.7500rem;
+  font-size: 0.6250rem;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
