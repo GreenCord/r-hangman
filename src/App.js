@@ -1,6 +1,8 @@
 import React from "react";
-
+import "./assets/css/reset.css";
 import "./App.css";
+
+import EventArea from "./components/EventArea/EventArea";
 
 function App() {
   return (
@@ -9,14 +11,7 @@ function App() {
         <header>
           <h1>Oregon Adventure</h1>
         </header>
-        <section className="imageWrapper">
-          <div className="eventImage">
-            <img src="https://placehold.it/320x160" alt="Placeholder" />
-          </div>
-          <div className="wagonImage">
-            <img src="https://placehold.it/320x160" alt="Placeholder" />
-          </div>
-        </section>
+        <EventArea />
         <section className="family">
           <div className="familyName">Wilbur</div>
           <div className="familyName">Mabel</div>

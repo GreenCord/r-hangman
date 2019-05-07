@@ -1,7 +1,68 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-html, body {
-  font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
-  height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root, div.App {
+  background: #d9d7c5;
+  display: flex;
+  font: 100%/1.5 'Press Start 2P', 'Lucida Console', Monaco, monospace;
+  flex-direction: column;
+  min-height: 100vh;
   text-align: center;
   width: 100%;
+}
+
+main {
+  color: #0e0e0e;
+  flex: 1 0 auto;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 1rem;
+  width: 100%;
+}
+
+main::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+main::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+header {
+  border: 1px solid lime;
+  border-radius: 15px 15px 0 0;
+}
+
+header, footer {
+  color: #efefef;
+  padding: 1.25rem;
+  background: #0e0e0e;
+}
+
+/* Temporary Classes */
+
+div[class*="letter"], div.familyName, div.eventImage, div.wagonImage {
+  display: inline-block;
 }

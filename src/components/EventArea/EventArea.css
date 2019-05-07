@@ -1,0 +1,13 @@
+.imageWrapper {
+  background: #0e0e0e;
+  border-left: 1px solid lime;
+  border-right: 1px solid lime;
+  border-bottom: 1rem solid lime;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.imageWrapper img {
+  height: auto;
+  width: 100%;
+}
