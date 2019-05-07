@@ -1,24 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="GameWrapper">
+        <header>
+          <h1>Oregon Adventure</h1>
+        </header>
+        <section className="imageWrapper">
+          <div className="eventImage">
+            <img src="https://placehold.it/320x160" alt="Placeholder" />
+          </div>
+          <div className="wagonImage">
+            <img src="https://placehold.it/320x160" alt="Placeholder" />
+          </div>
+        </section>
+        <section className="family">
+          <div className="familyName">Wilbur</div>
+          <div className="familyName">Mabel</div>
+          <div className="familyName">Walter</div>
+          <div className="familyName">Eunice</div>
+          <div className="familyName">Enos</div>
+          <div className="familyName">Winifred</div>
+        </section>
+        <section className="actionText">
+          <p>This is a temporary bit of text. Just to get the layout done.</p>
+        </section>
+        <section className="wordArea">
+          <div className="word-letter">D</div>
+          <div className="word-letter">Y</div>
+          <div className="word-letter">S</div>
+          <div className="word-letter">E</div>
+          <div className="word-letter">N</div>
+          <div className="word-letter">T</div>
+          <div className="word-letter">E</div>
+          <div className="word-letter">R</div>
+          <div className="word-letter">Y</div>
+        </section>
+        <section className="lettersGuessed">
+          <div className="letter">Q</div>
+          <div className="letter">W</div>
+          <div className="letter">E</div>
+          <div className="letter">R</div>
+          <div className="letter">T</div>
+          <div className="letter">Y</div>
+          <div className="letter">U</div>
+          <div className="letter">I</div>
+          <div className="letter">O</div>
+          <div className="letter">P</div>
+          <div className="letter">A</div>
+          <div className="letter">S</div>
+          <div className="letter">D</div>
+          <div className="letter">F</div>
+          <div className="letter">G</div>
+          <div className="letter">H</div>
+          <div className="letter">J</div>
+          <div className="letter">K</div>
+          <div className="letter">L</div>
+          <div className="letter">Z</div>
+          <div className="letter">X</div>
+          <div className="letter">C</div>
+          <div className="letter">V</div>
+          <div className="letter">B</div>
+          <div className="letter">N</div>
+          <div className="letter">M</div>
+        </section>
+      </main>
+      <footer>&copy; 2019 &ndash; Steven Martinez</footer>
     </div>
   );
 }
