@@ -11,13 +11,23 @@ import WordArea from "./components/WordArea/WordArea";
 import KeyboardArea from "./components/KeyboardArea/KeyboardArea";
 
 const useGameState = () => {
-  const [currentWord, setCurrentWord] = useState(logic.chooseWord);
+  const [currentWord] = useState(logic.chooseWord);
 
   return { currentWord };
 };
 
 const App = props => {
   const { currentWord } = useGameState();
+
+  const onLetterClick = letter => {
+    console.log("onLetterClick", letter);
+    console.log("currentWord", currentWord);
+    if (currentWord.indexOf(letter) > -1) {
+      return console.log(letter + " is in the word!");
+    } else {
+      return console.log(letter + " is not in the word!");
+    }
+  };
 
   return (
     <div className="App">
@@ -29,7 +39,7 @@ const App = props => {
         <FamilyArea />
         <ActionTextArea />
         <WordArea currentWord={currentWord} />
-        <KeyboardArea />
+        <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />
       </main>
       <footer>&copy; 2017-2019 Steven Martinez</footer>
     </div>

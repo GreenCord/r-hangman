@@ -20,9 +20,9 @@ const logic = {
     "yukon"
   ],
   chooseWord: () => {
-    return logic.words[Math.floor(Math.random() * logic.words.length)].split(
-      ""
-    );
+    return logic.words[Math.floor(Math.random() * logic.words.length)]
+      .toUpperCase()
+      .split("");
   }
 };
 
