@@ -21,7 +21,7 @@ function App() {
         <WordArea />
         <KeyboardArea />
       </main>
-      <footer>&copy; 2019 &ndash; Steven Martinez</footer>
+      <footer>&copy; 2017-2019 Steven Martinez</footer>
     </div>
   );
 }
