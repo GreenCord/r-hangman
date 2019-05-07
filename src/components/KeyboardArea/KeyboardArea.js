@@ -10,7 +10,12 @@ const KeyboardArea = () => (
   <section className="keyboard">
     <div className="keyboard-row keyboard-1">
       {keys.split("", 10).map(letter => (
-        <Letter key={letter} letter={letter} onClick={console.log} />
+        <Letter
+          key={letter}
+          letter={letter}
+          letterValue={letter}
+          onClick={console.log}
+        />
       ))}
     </div>
     <div className="keyboard-row keyboard-2">

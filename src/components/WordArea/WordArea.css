@@ -2,8 +2,8 @@
   background: #0e0e0e;
   display: grid;
   font-size: 0.6250rem;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
 }
 
 .wordArea div {
