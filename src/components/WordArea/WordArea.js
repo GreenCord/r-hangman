@@ -3,36 +3,9 @@ import React from "react";
 import "./WordArea.css";
 import Letter from "../Letter/Letter";
 
-const words = [
-  "dysentery",
-  "snakebite",
-  "hunting",
-  "river",
-  "goldrush",
-  "wagon",
-  "buffalo",
-  "measles",
-  "exhaustion",
-  "typhoid",
-  "cholera",
-  "exploration",
-  "cavalry",
-  "mountains",
-  "funeral",
-  "pioneer",
-  "independence",
-  "yukon"
-];
-
-const util = {
-  chooseWord: () => {
-    return words[Math.floor(Math.random() * words.length)].split("");
-  }
-};
-
-const WordArea = () => (
+const WordArea = props => (
   <section className="wordArea">
-    {util.chooseWord().map((letter, i) => (
+    {props.currentWord.map((letter, i) => (
       <Letter
         key={letter + i}
         letter="-"

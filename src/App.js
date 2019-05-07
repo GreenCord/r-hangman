@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import logic from "./utils/game";
+
 import "./assets/css/reset.css";
 import "./App.css";
 
@@ -8,7 +10,15 @@ import ActionTextArea from "./components/ActionTextArea/ActionTextArea";
 import WordArea from "./components/WordArea/WordArea";
 import KeyboardArea from "./components/KeyboardArea/KeyboardArea";
 
-function App() {
+const useGameState = () => {
+  const [currentWord, setCurrentWord] = useState(logic.chooseWord);
+
+  return { currentWord };
+};
+
+const App = props => {
+  const { currentWord } = useGameState();
+
   return (
     <div className="App">
       <main className="GameWrapper">
@@ -18,12 +28,12 @@ function App() {
         <EventArea />
         <FamilyArea />
         <ActionTextArea />
-        <WordArea />
+        <WordArea currentWord={currentWord} />
         <KeyboardArea />
       </main>
       <footer>&copy; 2017-2019 Steven Martinez</footer>
     </div>
   );
-}
+};
 
 export default App;
