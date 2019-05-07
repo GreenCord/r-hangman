@@ -5,6 +5,7 @@ import "./App.css";
 import EventArea from "./components/EventArea/EventArea";
 import FamilyArea from "./components/FamilyArea/FamilyArea";
 import ActionTextArea from "./components/ActionTextArea/ActionTextArea";
+import WordArea from "./components/WordArea/WordArea";
 
 function App() {
   return (
@@ -16,17 +17,7 @@ function App() {
         <EventArea />
         <FamilyArea />
         <ActionTextArea />
-        <section className="wordArea">
-          <div className="letter">D</div>
-          <div className="letter">Y</div>
-          <div className="letter">S</div>
-          <div className="letter">E</div>
-          <div className="letter">N</div>
-          <div className="letter">T</div>
-          <div className="letter">E</div>
-          <div className="letter">R</div>
-          <div className="letter">Y</div>
-        </section>
+        <WordArea />
         <section className="lettersGuessed">
           <div className="letter">Q</div>
           <div className="letter">W</div>

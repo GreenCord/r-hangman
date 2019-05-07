@@ -1,0 +1,17 @@
+.wordArea {
+  background: #0e0e0e;
+  display: grid;
+  font-size: 0.6250rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.wordArea div {
+  border-right: 1px solid lime;
+  border-bottom: 1px solid lime;
+  padding: 0.3125rem;
+}
+
+.wordArea div:first-child {
+  border-left: 1px solid lime;
+}
