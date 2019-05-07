@@ -1,0 +1,28 @@
+.keyboard {
+  background: #0e0e0e;
+  display: grid;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.keyboard-row {
+  display: grid;
+}
+
+.keyboard-row div {
+  border: 1px solid lime;
+}
+
+.keyboard-1 {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.keyboard-2 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.keyboard-3 {
+  grid-template-columns: repeat(7, 1fr);
+}
