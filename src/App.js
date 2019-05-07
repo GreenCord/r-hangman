@@ -3,6 +3,7 @@ import "./assets/css/reset.css";
 import "./App.css";
 
 import EventArea from "./components/EventArea/EventArea";
+import FamilyArea from "./components/FamilyArea/FamilyArea";
 
 function App() {
   return (
@@ -12,14 +13,7 @@ function App() {
           <h1>Oregon Adventure</h1>
         </header>
         <EventArea />
-        <section className="family">
-          <div className="familyName">Wilbur</div>
-          <div className="familyName">Mabel</div>
-          <div className="familyName">Walter</div>
-          <div className="familyName">Eunice</div>
-          <div className="familyName">Enos</div>
-          <div className="familyName">Winifred</div>
-        </section>
+        <FamilyArea />
         <section className="actionText">
           <p>This is a temporary bit of text. Just to get the layout done.</p>
         </section>

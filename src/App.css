@@ -14,7 +14,8 @@ html, body, #root, div.App {
 }
 
 main {
-  color: #0e0e0e;
+  /* background-color: #0e0e0e; */
+  color: lime;
   flex: 1 0 auto;
   margin: 0 auto;
   max-width: 1280px;

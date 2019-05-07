@@ -1,0 +1,12 @@
+.family {
+  background: #0e0e0e;
+  display: grid;
+  font-size: 0.7500rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.familyName {
+  border: 1px solid lime;
+  padding: 0.3125rem;
+}
