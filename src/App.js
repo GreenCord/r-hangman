@@ -12,6 +12,7 @@ import KeyboardArea from "./components/KeyboardArea/KeyboardArea";
 import SelectedLetters from "./components/SelectedLetters/SelectedLetters";
 
 const useGameState = () => {
+  const [gameStatus, setGameStatus] = useState("playing");
   const [currentWord] = useState(logic.chooseWord);
   const [currentEvent, setCurrentEvent] = useState(logic.chooseEvent);
   const [selectedLetter, setSelectedLetter] = useState("");
@@ -26,33 +27,37 @@ const useGameState = () => {
   );
 
   const setGameState = selectedLetter => {
-    const newSelectedLetters = selectedLetters.concat(selectedLetter);
-    const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
-    let returnMessage = selectedLetter;
+    if (gameStatus === "playing") {
+      const newSelectedLetters = selectedLetters.concat(selectedLetter);
+      const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
+      let returnMessage = selectedLetter;
 
-    if (currentWord.indexOf(selectedLetter) > -1) {
-      setCurrentEvent(logic.chooseEvent);
-      returnMessage += " is in the word!";
-    } else {
-      const newFamily = familyStatus;
-      console.log("newFamily init", newFamily);
-      console.log("currentFamilyMember", currentFamilyMember);
-      newFamily[currentFamilyMember].alive = !newFamily[currentFamilyMember]
-        .alive;
-      setFamilyStatus(newFamily);
-      if (currentFamilyMember === 0) {
-        // If this is the last family member, game over
-        console.log("GAME OVER!");
+      if (currentWord.indexOf(selectedLetter) > -1) {
+        setCurrentEvent(logic.chooseEvent);
+        returnMessage += " is in the word!";
       } else {
-        setCurrentFamilyMember(currentFamilyMember - 1);
-        returnMessage += " is not in the word!";
+        const newFamily = familyStatus;
+        console.log("newFamily init", newFamily);
+        console.log("currentFamilyMember", currentFamilyMember);
+        newFamily[currentFamilyMember].alive = !newFamily[currentFamilyMember]
+          .alive;
+        setFamilyStatus(newFamily);
+        if (currentFamilyMember === 0) {
+          // If this is the last family member, game over
+          setGameStatus("gameover");
+        } else {
+          setCurrentFamilyMember(currentFamilyMember - 1);
+          returnMessage += " is not in the word!";
+        }
       }
-    }
 
-    setSelectedLetter(selectedLetter);
-    setActionMessage(returnMessage);
-    setSelectedLetters(newSelectedLetters);
-    setDisplayWord(newDisplayWord);
+      setSelectedLetter(selectedLetter);
+      setActionMessage(returnMessage);
+      setSelectedLetters(newSelectedLetters);
+      setDisplayWord(newDisplayWord);
+    } else {
+      console.log("Game over");
+    }
   };
   return {
     currentWord,
