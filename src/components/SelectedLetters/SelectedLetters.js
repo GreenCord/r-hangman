@@ -5,7 +5,7 @@ import "./SelectedLetters.css";
 const SelectedLetters = props => (
   <section className="infoArea">
     Selected Letters: <br />
-    &rarr;{props.selectedLetters.length > 0 ? props.selectedLetters : ""}
+    &raquo; {props.selectedLetters.length > 0 ? props.selectedLetters : ""}
   </section>
 );
 
