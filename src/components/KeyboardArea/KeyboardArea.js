@@ -3,8 +3,17 @@ import React from "react";
 import "./KeyboardArea.css";
 
 import Letter from "../Letter/Letter";
+// import logic from "../../utils/game";
 
 const keys = "QWERTYUIOPASDFGHJKLZXCVBNM";
+
+const letterStatus = (letter, arr) => {
+  console.log(
+    "letterStatus:",
+    arr.indexOf(letter) > -1 ? "unavailable" : "available"
+  );
+  return arr.indexOf(letter) > -1 ? "unavailable" : "available";
+};
 
 const KeyboardArea = props => (
   <section className="keyboard">
@@ -14,6 +23,7 @@ const KeyboardArea = props => (
           key={letter}
           letter={letter}
           letterValue={letter}
+          status={letterStatus(letter, props.selectedLetters)}
           onClick={() => props.onClick(letter)}
         />
       ))}
@@ -26,6 +36,8 @@ const KeyboardArea = props => (
           <Letter
             key={letter}
             letter={letter}
+            letterValue={letter}
+            status={letterStatus(letter, props.selectedLetters)}
             onClick={() => props.onClick(letter)}
           />
         ))}
@@ -38,6 +50,8 @@ const KeyboardArea = props => (
           <Letter
             key={letter}
             letter={letter}
+            letterValue={letter}
+            status={letterStatus(letter, props.selectedLetters)}
             onClick={() => props.onClick(letter)}
           />
         ))}

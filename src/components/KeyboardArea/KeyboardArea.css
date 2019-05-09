@@ -1,15 +1,20 @@
 .keyboard {
   background: #0e0e0e;
+  border: 1px solid lime;
   color: lime;
   display: grid;
   margin-top: 1rem;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
 
-.keyboard .letter {
+.keyboard .letter.available {
   cursor: pointer;
+}
+
+.keyboard .letter.unavailable {
+  cursor: not-allowed;
 }
 
 .keyboard-row {

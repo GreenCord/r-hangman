@@ -79,7 +79,11 @@ const App = props => {
         <WordArea displayWord={displayWord} />
         <SelectedLetters selectedLetters={selectedLetters} />
       </main>
-      <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />
+      <KeyboardArea
+        currentWord={currentWord}
+        selectedLetters={selectedLetters}
+        onClick={onLetterClick}
+      />
       <footer>&copy; 2017-2019 Steven Martinez</footer>
     </div>
   );

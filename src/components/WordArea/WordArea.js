@@ -10,6 +10,7 @@ const WordArea = props => (
         key={letter + i}
         letter={letter.toUpperCase()}
         letterValue={letter.toUpperCase()}
+        // status={"available"}
         onClick={() => {}}
       />
     ))}

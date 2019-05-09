@@ -19,6 +19,11 @@ const logic = {
     "independence",
     "yukon"
   ],
+  colorStatus: {
+    available: "lime",
+    unavailable: "#3f3f3f"
+  },
+  cursorStatus: {},
   chooseWord: () => {
     return logic.words[Math.floor(Math.random() * logic.words.length)]
       .toUpperCase()
