@@ -19,11 +19,34 @@ const logic = {
     "independence",
     "yukon"
   ],
+  images: {
+    events: [
+      {
+        url: "/img/event_river.gif",
+        alt: "River",
+        msg: "You reached a river. Guess a letter correctly to cross."
+      },
+      {
+        url: "/img/event_forest.gif",
+        alt: "Forest",
+        msg: "You arrive at a forest. Guess a letter to hunt for food."
+      },
+      {
+        url: "/img/event_fort.gif",
+        alt: "Fort",
+        msg: "You happen upon a fort. Guess a letter to resupply."
+      }
+    ]
+  },
   colorStatus: {
     available: "lime",
     unavailable: "#3f3f3f"
   },
-  cursorStatus: {},
+  chooseEvent: () => {
+    return logic.images.events[
+      Math.floor(Math.random() * logic.images.events.length)
+    ];
+  },
   chooseWord: () => {
     return logic.words[Math.floor(Math.random() * logic.words.length)]
       .toUpperCase()

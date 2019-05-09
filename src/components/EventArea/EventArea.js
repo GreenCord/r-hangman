@@ -2,10 +2,10 @@ import React from "react";
 
 import "./EventArea.css";
 
-const EventArea = () => (
+const EventArea = props => (
   <section className="imageWrapper">
     <div className="eventImage">
-      <img src="/img/event_fort.gif" alt="Placeholder" />
+      <img src={props.currentEvent.url} alt={props.currentEvent.msg} />
     </div>
     <div className="wagonImage">
       <img src="/img/wagon_default.gif" alt="Placeholder" />

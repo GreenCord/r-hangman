@@ -13,6 +13,7 @@ import SelectedLetters from "./components/SelectedLetters/SelectedLetters";
 
 const useGameState = () => {
   const [currentWord] = useState(logic.chooseWord);
+  const [currentEvent, setCurrentEvent] = useState(logic.chooseEvent);
   const [selectedLetter, setSelectedLetter] = useState("");
   const [selectedLetters, setSelectedLetters] = useState([]);
   const [actionMessage, setActionMessage] = useState("Select a letter.");
@@ -36,6 +37,7 @@ const useGameState = () => {
   };
   return {
     currentWord,
+    currentEvent,
     selectedLetter,
     selectedLetters,
     actionMessage,
@@ -47,6 +49,7 @@ const useGameState = () => {
 const App = props => {
   const {
     currentWord,
+    currentEvent,
     selectedLetter,
     selectedLetters,
     actionMessage,
@@ -66,11 +69,12 @@ const App = props => {
         <header>
           <h1>Oregon Adventure</h1>
         </header>
-        <EventArea />
+        <EventArea currentEvent={currentEvent} />
         <FamilyArea />
         <ActionTextArea
           selectedLetter={selectedLetter}
           actionMessage={actionMessage}
+          currentEvent={currentEvent}
         />
         <WordArea displayWord={displayWord} />
         <SelectedLetters selectedLetters={selectedLetters} />
