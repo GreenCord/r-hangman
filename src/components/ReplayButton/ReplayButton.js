@@ -3,7 +3,7 @@ import React from "react";
 import "./ReplayButton.css";
 
 const ReplayButton = props => (
-  <section className="infoArea">
+  <section className="replayInfoArea">
     <button onClick={props.onClick}>Play Again</button>
   </section>
 );
