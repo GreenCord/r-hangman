@@ -21,7 +21,7 @@ const useGameState = () => {
   const [currentFamilyMember, setCurrentFamilyMember] = useState(
     familyStatus.length - 1
   );
-  const [actionMessage, setActionMessage] = useState("Select a letter.");
+  const [actionMessage, setActionMessage] = useState("");
   const [displayWord, setDisplayWord] = useState(
     logic.displayWord(currentWord, selectedLetters)
   );
@@ -56,6 +56,7 @@ const useGameState = () => {
       setSelectedLetters(newSelectedLetters);
       setDisplayWord(newDisplayWord);
     } else {
+      setActionMessage("Game over.");
       console.log("Game over");
     }
   };

@@ -5,9 +5,9 @@ import "./ActionTextArea.css";
 const ActionTextArea = props => (
   <section className="actionText">
     <p>
-      {props.currentEvent.msg.length > 1
-        ? props.currentEvent.msg
-        : props.actionMessage}
+      {props.actionMessage.length > 1
+        ? props.actionMessage
+        : props.currentEvent.msg}
     </p>
   </section>
 );
