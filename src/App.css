@@ -57,6 +57,7 @@ header {
 
 header, footer {
   color: #efefef;
+  font-size: 0.7500rem;
   padding: 1.25rem;
   background: #0e0e0e;
 }

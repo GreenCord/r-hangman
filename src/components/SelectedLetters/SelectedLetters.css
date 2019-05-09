@@ -1,5 +1,7 @@
 .selected-letters-area {
   background: #0e0e0e;
+  border: 1px solid lime;
+  border-radius: 0 0 15px 15px;
   color: #efefef;
   font-size: 0.6250rem;
   padding: 0.3125rem;
