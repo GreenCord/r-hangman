@@ -21,22 +21,18 @@ const useGameState = () => {
   );
 
   const setGameState = selectedLetter => {
-    setSelectedLetter(selectedLetter);
     const newSelectedLetters = selectedLetters.concat(selectedLetter);
+    const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
     let returnMessage = selectedLetter;
+
     currentWord.indexOf(selectedLetter) > -1
       ? (returnMessage += " is in the word!")
       : (returnMessage += " is not in the word!");
+
+    setSelectedLetter(selectedLetter);
     setActionMessage(returnMessage);
     setSelectedLetters(newSelectedLetters);
-    console.log("newSelectedLetters", newSelectedLetters);
-    const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
     setDisplayWord(newDisplayWord);
-    console.log(
-      "logic call for setDisplayWord",
-      logic.displayWord(currentWord, newSelectedLetters)
-    );
-    console.log("Is new word updated?", displayWord);
   };
   return {
     currentWord,
