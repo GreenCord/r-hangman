@@ -39,8 +39,8 @@ const App = props => {
         <FamilyArea />
         <ActionTextArea />
         <WordArea currentWord={currentWord} />
-        <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />
       </main>
+      <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />
       <footer>&copy; 2017-2019 Steven Martinez</footer>
     </div>
   );

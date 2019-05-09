@@ -1,5 +1,6 @@
 .keyboard {
   background: #0e0e0e;
+  color: lime;
   display: grid;
   margin-top: 1rem;
   padding: 0.5rem;

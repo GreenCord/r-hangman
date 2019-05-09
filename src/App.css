@@ -60,9 +60,3 @@ header, footer {
   padding: 1.25rem;
   background: #0e0e0e;
 }
-
-/* Temporary Classes */
-
-div[class*="letter"], div.familyName, div.eventImage, div.wagonImage {
-  display: inline-block;
-}
