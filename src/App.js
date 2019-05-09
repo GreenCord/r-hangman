@@ -12,21 +12,36 @@ import KeyboardArea from "./components/KeyboardArea/KeyboardArea";
 
 const useGameState = () => {
   const [currentWord] = useState(logic.chooseWord);
+  const [selectedLetter, setSelectedLetter] = useState("");
+  const [actionMessage, setActionMessage] = useState("Select a letter.");
 
-  return { currentWord };
+  const setGameState = selectedLetter => {
+    setSelectedLetter(selectedLetter);
+    let returnMessage = selectedLetter;
+    currentWord.indexOf(selectedLetter) > -1
+      ? (returnMessage += " is in the word!")
+      : (returnMessage += " is not in the word!");
+    setActionMessage(returnMessage);
+  };
+  return { currentWord, selectedLetter, actionMessage, setGameState };
 };
 
 const App = props => {
-  const { currentWord } = useGameState();
+  const {
+    currentWord,
+    selectedLetter,
+    actionMessage,
+    setGameState
+  } = useGameState();
 
   const onLetterClick = letter => {
-    console.log("onLetterClick", letter);
-    console.log("currentWord", currentWord);
-    if (currentWord.indexOf(letter) > -1) {
-      return console.log(letter + " is in the word!");
-    } else {
-      return console.log(letter + " is not in the word!");
-    }
+    setGameState(letter);
+    // props.setSelectedLetter(letter);
+    // if (currentWord.indexOf(letter) > -1) {
+    //   return console.log(letter + " is in the word!");
+    // } else {
+    //   return console.log(letter + " is not in the word!");
+    // }
   };
 
   return (
@@ -37,7 +52,10 @@ const App = props => {
         </header>
         <EventArea />
         <FamilyArea />
-        <ActionTextArea />
+        <ActionTextArea
+          selectedLetter={selectedLetter}
+          actionMessage={actionMessage}
+        />
         <WordArea currentWord={currentWord} />
       </main>
       <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />

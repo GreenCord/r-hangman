@@ -2,9 +2,9 @@ import React from "react";
 
 import "./ActionTextArea.css";
 
-const ActionTextArea = () => (
+const ActionTextArea = props => (
   <section className="actionText">
-    <p>This is a temporary bit of text. Just to get the layout done.</p>
+    <p>{props.actionMessage}</p>
   </section>
 );
 
