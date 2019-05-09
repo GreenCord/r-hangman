@@ -1,7 +1,7 @@
 .replayInfoArea {
   background: #0e0e0e;
-  border: 1px solid lime;
-  border-radius: 0 0 15px 15px;
+  /* border: 1px solid lime; */
+  /* border-radius: 0 0 15px 15px; */
   color: #efefef;
   font-size: 0.6250rem;
   padding: 0.3125rem;
@@ -16,4 +16,16 @@
   font-size: inherit;
   margin: 1rem auto;
   padding: 0.5rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .replayInfoArea {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .replayInfoArea {
+    padding: 2.25rem 1rem;
+  }
 }

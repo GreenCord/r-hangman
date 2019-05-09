@@ -1,9 +1,23 @@
 .infoArea {
   background: #0e0e0e;
-  border: 1px solid lime;
-  border-radius: 0 0 15px 15px;
+  /* border: 1px solid lime; */
+  /* border-radius: 0 0 15px 15px; */
   color: #efefef;
+  flex: 1 0 auto;
   font-size: 0.6250rem;
   padding: 0.3125rem;
   text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .infoArea {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .infoArea {
+    font-size: 2rem;
+  }
 }

@@ -2,8 +2,10 @@
   background: #0e0e0e;
   display: grid;
   font-size: 0.6250rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
+  grid-gap: 0.3125rem 0.3125rem;
+  padding: 0.3125rem;
 }
 
 .familyName {
@@ -14,5 +16,18 @@
 @media only screen and (min-width: 375px) {
   .family {
     font-size: 0.7500rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .family {
+    font-size: 0.8750rem;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .family {
+    font-size: 1rem;
   }
 }

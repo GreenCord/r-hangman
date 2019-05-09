@@ -125,12 +125,12 @@ const Game = props => {
         ) : (
           <SelectedLetters selectedLetters={selectedLetters} />
         )}
+        <KeyboardArea
+          currentWord={currentWord}
+          selectedLetters={selectedLetters}
+          onClick={onLetterClick}
+        />
       </main>
-      <KeyboardArea
-        currentWord={currentWord}
-        selectedLetters={selectedLetters}
-        onClick={onLetterClick}
-      />
       <footer>
         &copy; 2017-2019 <span className="footer-name">Steven Martinez</span>
       </footer>

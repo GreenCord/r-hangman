@@ -31,6 +31,9 @@ class KeyboardArea extends Component {
   render() {
     return (
       <section className="keyboard">
+        <header>
+          <h2>Select a letter:</h2>
+        </header>
         <div className="keyboard-row keyboard-1">
           {keys.split("", 10).map(letter => (
             <Letter

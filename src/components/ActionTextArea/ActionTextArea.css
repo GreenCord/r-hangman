@@ -1,6 +1,5 @@
 .actionText {
   background: #0e0e0e;
-  border: 1px solid lime;
   font-size: 0.6250rem;
   padding: 0.3125rem;
   text-align: left;
@@ -9,5 +8,19 @@
 @media only screen and (min-width: 375px) {
   .actionText {
     font-size: 0.7500rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .actionText {
+    font-size: 0.8750rem;
+    padding: 1rem
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .actionText {
+    font-size: 2rem;
+    padding: 2.5rem;
   }
 }
