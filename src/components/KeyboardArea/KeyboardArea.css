@@ -8,6 +8,10 @@
   grid-template-rows: repeat(3, 1fr);
 }
 
+.keyboard .letter {
+  cursor: pointer;
+}
+
 .keyboard-row {
   display: grid;
 }
