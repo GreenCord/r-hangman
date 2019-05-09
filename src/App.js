@@ -17,17 +17,13 @@ const useGameState = () => {
   const [selectedLetter, setSelectedLetter] = useState("");
   const [selectedLetters, setSelectedLetters] = useState([]);
   const [familyStatus, setFamilyStatus] = useState(logic.family);
+  const [currentFamilyMember, setCurrentFamilyMember] = useState(
+    familyStatus.length - 1
+  );
   const [actionMessage, setActionMessage] = useState("Select a letter.");
   const [displayWord, setDisplayWord] = useState(
     logic.displayWord(currentWord, selectedLetters)
   );
-
-  const handleFamilyDeath = family => {
-    console.log("Someone ded");
-    console.log("Handle Family Death here.");
-    console.log("Family:", family);
-    return family;
-  };
 
   const setGameState = selectedLetter => {
     const newSelectedLetters = selectedLetters.concat(selectedLetter);
@@ -38,8 +34,19 @@ const useGameState = () => {
       setCurrentEvent(logic.chooseEvent);
       returnMessage += " is in the word!";
     } else {
-      setFamilyStatus(handleFamilyDeath(familyStatus));
-      returnMessage += " is not in the word!";
+      const newFamily = familyStatus;
+      console.log("newFamily init", newFamily);
+      console.log("currentFamilyMember", currentFamilyMember);
+      newFamily[currentFamilyMember].alive = !newFamily[currentFamilyMember]
+        .alive;
+      setFamilyStatus(newFamily);
+      if (currentFamilyMember === 0) {
+        // If this is the last family member, game over
+        console.log("GAME OVER!");
+      } else {
+        setCurrentFamilyMember(currentFamilyMember - 1);
+        returnMessage += " is not in the word!";
+      }
     }
 
     setSelectedLetter(selectedLetter);

@@ -4,8 +4,9 @@ import "./FamilyArea.css";
 
 const FamilyArea = props => (
   <section className="family">
-    {props.family.map(f => (
+    {props.family.map((f, i) => (
       <div
+        key={f.name + i}
         className="familyName"
         style={{ color: f.alive === true ? "lime" : "maroon" }}
       >
