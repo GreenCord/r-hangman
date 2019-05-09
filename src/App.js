@@ -9,21 +9,36 @@ import FamilyArea from "./components/FamilyArea/FamilyArea";
 import ActionTextArea from "./components/ActionTextArea/ActionTextArea";
 import WordArea from "./components/WordArea/WordArea";
 import KeyboardArea from "./components/KeyboardArea/KeyboardArea";
+import SelectedLetters from "./components/SelectedLetters/SelectedLetters";
 
 const useGameState = () => {
   const [currentWord] = useState(logic.chooseWord);
   const [selectedLetter, setSelectedLetter] = useState("");
   const [actionMessage, setActionMessage] = useState("Select a letter.");
+  const [selectedLetters, setSelectedLetters] = useState([]);
 
   const setGameState = selectedLetter => {
     setSelectedLetter(selectedLetter);
+    console.log("selectedLetters", selectedLetters);
+    console.log("Type of selectedLetters", typeof selectedLetters);
+    const newSelectedLetters = selectedLetters.concat(selectedLetter);
+    console.log("newSelectedLetters", newSelectedLetters);
+    console.log("Type of newSelectedLetters", typeof newSelectedLetters);
+
     let returnMessage = selectedLetter;
     currentWord.indexOf(selectedLetter) > -1
       ? (returnMessage += " is in the word!")
       : (returnMessage += " is not in the word!");
     setActionMessage(returnMessage);
+    setSelectedLetters(newSelectedLetters);
   };
-  return { currentWord, selectedLetter, actionMessage, setGameState };
+  return {
+    currentWord,
+    selectedLetter,
+    actionMessage,
+    selectedLetters,
+    setGameState
+  };
 };
 
 const App = props => {
@@ -31,6 +46,7 @@ const App = props => {
     currentWord,
     selectedLetter,
     actionMessage,
+    selectedLetters,
     setGameState
   } = useGameState();
 
@@ -57,6 +73,7 @@ const App = props => {
           actionMessage={actionMessage}
         />
         <WordArea currentWord={currentWord} />
+        <SelectedLetters selectedLetters={selectedLetters} />
       </main>
       <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />
       <footer>&copy; 2017-2019 Steven Martinez</footer>
