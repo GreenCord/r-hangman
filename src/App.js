@@ -30,24 +30,31 @@ const useGameState = () => {
     if (gameStatus === "playing") {
       const newSelectedLetters = selectedLetters.concat(selectedLetter);
       const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
-      let returnMessage = selectedLetter;
+      let returnMessage = "";
+      let newGameStatus = "playing";
 
       if (currentWord.indexOf(selectedLetter) > -1) {
-        setCurrentEvent(logic.chooseEvent);
-        returnMessage += " is in the word!";
+        console.log("Check if word is complete");
+        console.log('indexOf("-")', newDisplayWord.indexOf("-"));
+        if (newDisplayWord.indexOf("-") > -1) {
+          setCurrentEvent(logic.chooseEvent);
+        } else {
+          console.log("YOU WON!");
+          newGameStatus = "winner";
+          returnMessage = "You won! Congratulations!";
+        }
       } else {
         const newFamily = familyStatus;
-        console.log("newFamily init", newFamily);
-        console.log("currentFamilyMember", currentFamilyMember);
         newFamily[currentFamilyMember].alive = !newFamily[currentFamilyMember]
           .alive;
         setFamilyStatus(newFamily);
         if (currentFamilyMember === 0) {
           // If this is the last family member, game over
-          setGameStatus("gameover");
+          console.log("GameOver");
+          newGameStatus = "gameover";
+          returnMessage = "Game over.";
         } else {
           setCurrentFamilyMember(currentFamilyMember - 1);
-          returnMessage += " is not in the word!";
         }
       }
 
@@ -55,9 +62,7 @@ const useGameState = () => {
       setActionMessage(returnMessage);
       setSelectedLetters(newSelectedLetters);
       setDisplayWord(newDisplayWord);
-    } else {
-      setActionMessage("Game over.");
-      console.log("Game over");
+      setGameStatus(newGameStatus);
     }
   };
   return {
