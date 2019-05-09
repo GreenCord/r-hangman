@@ -59,7 +59,9 @@ const App = props => {
   } = useGameState();
 
   const onLetterClick = letter => {
-    setGameState(letter);
+    if (selectedLetters.indexOf(letter) === -1) {
+      setGameState(letter);
+    }
   };
 
   return (
