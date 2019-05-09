@@ -14,29 +14,36 @@ import SelectedLetters from "./components/SelectedLetters/SelectedLetters";
 const useGameState = () => {
   const [currentWord] = useState(logic.chooseWord);
   const [selectedLetter, setSelectedLetter] = useState("");
-  const [actionMessage, setActionMessage] = useState("Select a letter.");
   const [selectedLetters, setSelectedLetters] = useState([]);
+  const [actionMessage, setActionMessage] = useState("Select a letter.");
+  const [displayWord, setDisplayWord] = useState(
+    logic.displayWord(currentWord, selectedLetters)
+  );
 
   const setGameState = selectedLetter => {
     setSelectedLetter(selectedLetter);
-    console.log("selectedLetters", selectedLetters);
-    console.log("Type of selectedLetters", typeof selectedLetters);
     const newSelectedLetters = selectedLetters.concat(selectedLetter);
-    console.log("newSelectedLetters", newSelectedLetters);
-    console.log("Type of newSelectedLetters", typeof newSelectedLetters);
-
     let returnMessage = selectedLetter;
     currentWord.indexOf(selectedLetter) > -1
       ? (returnMessage += " is in the word!")
       : (returnMessage += " is not in the word!");
     setActionMessage(returnMessage);
     setSelectedLetters(newSelectedLetters);
+    console.log("newSelectedLetters", newSelectedLetters);
+    const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
+    setDisplayWord(newDisplayWord);
+    console.log(
+      "logic call for setDisplayWord",
+      logic.displayWord(currentWord, newSelectedLetters)
+    );
+    console.log("Is new word updated?", displayWord);
   };
   return {
     currentWord,
     selectedLetter,
-    actionMessage,
     selectedLetters,
+    actionMessage,
+    displayWord,
     setGameState
   };
 };
@@ -45,19 +52,14 @@ const App = props => {
   const {
     currentWord,
     selectedLetter,
-    actionMessage,
     selectedLetters,
+    actionMessage,
+    displayWord,
     setGameState
   } = useGameState();
 
   const onLetterClick = letter => {
     setGameState(letter);
-    // props.setSelectedLetter(letter);
-    // if (currentWord.indexOf(letter) > -1) {
-    //   return console.log(letter + " is in the word!");
-    // } else {
-    //   return console.log(letter + " is not in the word!");
-    // }
   };
 
   return (
@@ -72,7 +74,7 @@ const App = props => {
           selectedLetter={selectedLetter}
           actionMessage={actionMessage}
         />
-        <WordArea currentWord={currentWord} />
+        <WordArea displayWord={displayWord} />
         <SelectedLetters selectedLetters={selectedLetters} />
       </main>
       <KeyboardArea currentWord={currentWord} onClick={onLetterClick} />

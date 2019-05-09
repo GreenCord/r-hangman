@@ -23,6 +23,11 @@ const logic = {
     return logic.words[Math.floor(Math.random() * logic.words.length)]
       .toUpperCase()
       .split("");
+  },
+  displayWord: (word, selectedLetters) => {
+    return word.map(letter =>
+      selectedLetters.indexOf(letter) > -1 ? letter : "-"
+    );
   }
 };
 

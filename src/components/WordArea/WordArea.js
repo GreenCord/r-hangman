@@ -5,12 +5,11 @@ import Letter from "../Letter/Letter";
 
 const WordArea = props => (
   <section className="wordArea">
-    {props.currentWord.map((letter, i) => (
+    {props.displayWord.map((letter, i) => (
       <Letter
         key={letter + i}
-        letter="-"
+        letter={letter.toUpperCase()}
         letterValue={letter.toUpperCase()}
-        onClick={console.log}
       />
     ))}
   </section>
