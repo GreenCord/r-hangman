@@ -15,6 +15,7 @@ const useGameState = () => {
   const [gameStatus, setGameStatus] = useState("playing");
   const [currentWord] = useState(logic.chooseWord);
   const [currentEvent, setCurrentEvent] = useState(logic.chooseEvent);
+  const [currentWagon, setCurrentWagon] = useState(logic.images.playing[0]);
   const [selectedLetter, setSelectedLetter] = useState("");
   const [selectedLetters, setSelectedLetters] = useState([]);
   const [familyStatus, setFamilyStatus] = useState(logic.family);
@@ -40,8 +41,10 @@ const useGameState = () => {
           setCurrentEvent(logic.chooseEvent);
         } else {
           console.log("YOU WON!");
+          setCurrentEvent(logic.images.winner[0]);
+          setCurrentWagon(logic.images.winner[1]);
           newGameStatus = "winner";
-          returnMessage = "You won! Congratulations!";
+          returnMessage = "Congratulations! You made it to Oregon!";
         }
       } else {
         const newFamily = familyStatus;
@@ -51,8 +54,10 @@ const useGameState = () => {
         if (currentFamilyMember === 0) {
           // If this is the last family member, game over
           console.log("GameOver");
+          setCurrentEvent(logic.images.gameover[0]);
+          setCurrentWagon(logic.images.gameover[1]);
           newGameStatus = "gameover";
-          returnMessage = "Game over.";
+          returnMessage = "You didn't make it to Oregon.";
         } else {
           setCurrentFamilyMember(currentFamilyMember - 1);
         }
@@ -68,6 +73,7 @@ const useGameState = () => {
   return {
     currentWord,
     currentEvent,
+    currentWagon,
     selectedLetter,
     selectedLetters,
     familyStatus,
@@ -81,6 +87,7 @@ const App = props => {
   const {
     currentWord,
     currentEvent,
+    currentWagon,
     selectedLetter,
     selectedLetters,
     familyStatus,
@@ -101,7 +108,7 @@ const App = props => {
         <header>
           <h1>Oregon Adventure</h1>
         </header>
-        <EventArea currentEvent={currentEvent} />
+        <EventArea currentEvent={currentEvent} currentWagon={currentWagon} />
         <FamilyArea family={familyStatus} />
         <ActionTextArea
           selectedLetter={selectedLetter}
@@ -116,7 +123,9 @@ const App = props => {
         selectedLetters={selectedLetters}
         onClick={onLetterClick}
       />
-      <footer>&copy; 2017-2019 Steven Martinez</footer>
+      <footer>
+        &copy; 2017-2019 <span className="footer-name">Steven Martinez</span>
+      </footer>
     </div>
   );
 };

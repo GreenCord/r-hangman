@@ -50,14 +50,24 @@ main::after {
   pointer-events: none;
 }
 
-header {
-  border: 1px solid lime;
-  border-radius: 15px 15px 0 0;
-}
-
 header, footer {
   color: #efefef;
   font-size: 0.7500rem;
   padding: 1.25rem;
   background: #0e0e0e;
+}
+
+header {
+  border: 1px solid lime;
+  border-radius: 15px 15px 0 0;
+}
+
+footer .footer-name {
+  display: block;
+}
+
+@media only screen and (min-width: 375px) {
+  header, footer {
+    font-size: 1rem;
+  }
 }

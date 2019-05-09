@@ -10,3 +10,9 @@
   border: 1px solid lime;
   padding: 0.3125rem;
 }
+
+@media only screen and (min-width: 375px) {
+  .family {
+    font-size: 0.7500rem;
+  }
+}

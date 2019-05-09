@@ -42,6 +42,27 @@ const logic = {
         alt: "Fort",
         msg: "You happen upon a fort. Guess a letter to resupply."
       }
+    ],
+    playing: [{ url: "/img/wagon_default.gif", alt: "Your wagon." }],
+    gameover: [
+      {
+        url: "/img/lose_event.gif",
+        alt: "Your family died."
+      },
+      {
+        url: "/img/lose_wagon.gif",
+        alt: "And so did your wagon."
+      }
+    ],
+    winner: [
+      {
+        url: "/img/win_event.gif",
+        alt: "You won!"
+      },
+      {
+        url: "/img/win_wagon.gif",
+        alt: "Do the truffle shuffle!"
+      }
     ]
   },
   words: [

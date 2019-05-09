@@ -5,3 +5,9 @@
   padding: 0.3125rem;
   text-align: left;
 }
+
+@media only screen and (min-width: 375px) {
+  .actionText {
+    font-size: 0.7500rem;
+  }
+}
