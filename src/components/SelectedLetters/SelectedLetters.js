@@ -3,7 +3,7 @@ import React from "react";
 import "./SelectedLetters.css";
 
 const SelectedLetters = props => (
-  <section className="selected-letters-area">
+  <section className="infoArea">
     Selected Letters: <br />
     {props.selectedLetters}
   </section>

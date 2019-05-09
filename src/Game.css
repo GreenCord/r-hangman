@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html, body, #root, div.App {
+html, body, #root, .Game {
   background: #d9d7c5;
   display: flex;
   font: 100%/1.5 'Press Start 2P', 'Lucida Console', Monaco, monospace;

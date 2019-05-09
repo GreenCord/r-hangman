@@ -1,0 +1,19 @@
+.infoArea {
+  background: #0e0e0e;
+  border: 1px solid lime;
+  border-radius: 0 0 15px 15px;
+  color: #efefef;
+  font-size: 0.6250rem;
+  padding: 0.3125rem;
+  text-align: center;
+}
+
+.infoArea button {
+  border: 0;
+  background: lime;
+  color: #0e0e0e;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
