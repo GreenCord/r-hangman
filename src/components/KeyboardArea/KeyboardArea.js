@@ -15,7 +15,12 @@ class KeyboardArea extends Component {
     this.onLetterPress = this.onLetterPress.bind(this);
   }
   onLetterPress(e) {
-    this.props.onClick(e.key.toUpperCase());
+    e.preventDefault();
+    const reg = /[a-zA-Z]/;
+    const keyPressed = String.fromCharCode(e.keyCode);
+    if (reg.test(keyPressed)) {
+      this.props.onClick(e.key.toUpperCase());
+    }
   }
   componentDidMount() {
     document.addEventListener("keypress", this.onLetterPress, false);
