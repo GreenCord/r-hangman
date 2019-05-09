@@ -1,23 +1,29 @@
 const logic = {
-  words: [
-    "dysentery",
-    "snakebite",
-    "hunting",
-    "river",
-    "goldrush",
-    "wagon",
-    "buffalo",
-    "measles",
-    "exhaustion",
-    "typhoid",
-    "cholera",
-    "exploration",
-    "cavalry",
-    "mountains",
-    "funeral",
-    "pioneer",
-    "independence",
-    "yukon"
+  family: [
+    {
+      name: "Wilbur",
+      alive: true
+    },
+    {
+      name: "Mabel",
+      alive: true
+    },
+    {
+      name: "Walter",
+      alive: true
+    },
+    {
+      name: "Eunice",
+      alive: true
+    },
+    {
+      name: "Enos",
+      alive: true
+    },
+    {
+      name: "Winifred",
+      alive: true
+    }
   ],
   images: {
     events: [
@@ -38,6 +44,26 @@ const logic = {
       }
     ]
   },
+  words: [
+    "dysentery",
+    "snakebite",
+    "hunting",
+    "river",
+    "goldrush",
+    "wagon",
+    "buffalo",
+    "measles",
+    "exhaustion",
+    "typhoid",
+    "cholera",
+    "exploration",
+    "cavalry",
+    "mountains",
+    "funeral",
+    "pioneer",
+    "independence",
+    "yukon"
+  ],
   colorStatus: {
     available: "lime",
     unavailable: "#3f3f3f"

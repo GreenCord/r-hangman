@@ -16,19 +16,31 @@ const useGameState = () => {
   const [currentEvent, setCurrentEvent] = useState(logic.chooseEvent);
   const [selectedLetter, setSelectedLetter] = useState("");
   const [selectedLetters, setSelectedLetters] = useState([]);
+  const [familyStatus, setFamilyStatus] = useState(logic.family);
   const [actionMessage, setActionMessage] = useState("Select a letter.");
   const [displayWord, setDisplayWord] = useState(
     logic.displayWord(currentWord, selectedLetters)
   );
+
+  const handleFamilyDeath = family => {
+    console.log("Someone ded");
+    console.log("Handle Family Death here.");
+    console.log("Family:", family);
+    return family;
+  };
 
   const setGameState = selectedLetter => {
     const newSelectedLetters = selectedLetters.concat(selectedLetter);
     const newDisplayWord = logic.displayWord(currentWord, newSelectedLetters);
     let returnMessage = selectedLetter;
 
-    currentWord.indexOf(selectedLetter) > -1
-      ? (returnMessage += " is in the word!")
-      : (returnMessage += " is not in the word!");
+    if (currentWord.indexOf(selectedLetter) > -1) {
+      setCurrentEvent(logic.chooseEvent);
+      returnMessage += " is in the word!";
+    } else {
+      setFamilyStatus(handleFamilyDeath(familyStatus));
+      returnMessage += " is not in the word!";
+    }
 
     setSelectedLetter(selectedLetter);
     setActionMessage(returnMessage);
@@ -40,6 +52,7 @@ const useGameState = () => {
     currentEvent,
     selectedLetter,
     selectedLetters,
+    familyStatus,
     actionMessage,
     displayWord,
     setGameState
@@ -52,6 +65,7 @@ const App = props => {
     currentEvent,
     selectedLetter,
     selectedLetters,
+    familyStatus,
     actionMessage,
     displayWord,
     setGameState
@@ -70,7 +84,7 @@ const App = props => {
           <h1>Oregon Adventure</h1>
         </header>
         <EventArea currentEvent={currentEvent} />
-        <FamilyArea />
+        <FamilyArea family={familyStatus} />
         <ActionTextArea
           selectedLetter={selectedLetter}
           actionMessage={actionMessage}

@@ -2,14 +2,16 @@ import React from "react";
 
 import "./FamilyArea.css";
 
-const FamilyArea = () => (
+const FamilyArea = props => (
   <section className="family">
-    <div className="familyName">Wilbur</div>
-    <div className="familyName">Mabel</div>
-    <div className="familyName">Walter</div>
-    <div className="familyName">Eunice</div>
-    <div className="familyName">Enos</div>
-    <div className="familyName">Winifred</div>
+    {props.family.map(f => (
+      <div
+        className="familyName"
+        style={{ color: f.alive === true ? "lime" : "maroon" }}
+      >
+        {f.name}
+      </div>
+    ))}
   </section>
 );
 
