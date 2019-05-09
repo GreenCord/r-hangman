@@ -130,10 +130,10 @@ const Game = props => {
           selectedLetters={selectedLetters}
           onClick={onLetterClick}
         />
+        <footer>
+          &copy; 2017-2019 <span className="footer-name">Steven Martinez</span>
+        </footer>
       </main>
-      <footer>
-        &copy; 2017-2019 <span className="footer-name">Steven Martinez</span>
-      </footer>
     </div>
   );
 };

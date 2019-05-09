@@ -1,17 +1,22 @@
 .keyboard {
   align-content: space-evenly;
   background: #0e0e0e;
-  border-radius: 0 0 15px 15px;
   color: lime;
   display: grid;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
+  padding: 0 0.3125rem;
 }
 
 .keyboard header {
   color: #efefef;
   font-size: 1rem;
+  padding: 0;
+}
+
+.keyboard header h2 {
+  margin: 0;
 }
 
 .keyboard .letter.available {
@@ -54,5 +59,3 @@
     font-size: 2rem;
   }
 }
-
-@media only screen and (min-width: 1024px) and (min-height: 1366px) {}

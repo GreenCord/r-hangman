@@ -7,13 +7,14 @@ html, body, #root, .Game {
   display: flex;
   font: 100%/1.5 'Press Start 2P', 'Lucida Console', Monaco, monospace;
   flex-direction: column;
+  height: 100%;
   min-height: 100vh;
+  max-height: 100vh;
   text-align: center;
   width: 100%;
 }
 
 main {
-  /* background-color: #0e0e0e; */
   color: lime;
   display: flex;
   flex-direction: column;
@@ -21,11 +22,12 @@ main {
   flex: 1 0 auto;
   margin: 0 auto;
   max-width: 1280px;
+  max-height: 100vh;
   padding: 1rem;
   width: 100%;
 }
 
-main header, main section {
+main header, main section, main footer {
   flex: 0 1 auto;
 }
 
@@ -60,12 +62,17 @@ main::after {
 header, footer {
   color: #efefef;
   font-size: 0.7500rem;
-  padding: 1.25rem;
   background: #0e0e0e;
 }
 
 header {
   border-radius: 15px 15px 0 0;
+  padding: 1.25rem;
+}
+
+footer {
+  border-radius: 0 0 15px 15px;
+  padding: 0.3125rem;
 }
 
 footer .footer-name {
